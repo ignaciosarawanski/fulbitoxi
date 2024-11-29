@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
+:root
+    --primary-color: #520000
+    --secundary-color: #ff0000
+    --background-color: #470000
+    color: white
+
+*
+    margin: 0
+    padding: 0
+
+body
+    background-color: var(--background-color)
+    font-family: Poppins
+
+.no-deco
+    color: white
+    font-style: none
+    text-decoration: none
+
+header
+    background-color: var(--primary-color)
+    border-bottom: 3px solid var(--secundary-color)
+    color: white
+    font-style: italic
+    font-weight: bold
+    margin: 0
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25)
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25)
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25)
+    display: flex
+    justify-content: center
+
+header a
+    display: flex
+    align-items: center
+    justify-content: center
+
+header p
+    font-size: 1.25em
+    margin: 5px
+    color: #FFFAFF
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3)
+
+#logo
+    width: 40px
+    height: 40px
+
+/* || Formation CSS */
+
+.formation
+    width: 950px
+    max-width: 90%
+    height: 650px
+    margin: 16px 0
+    border: 2px solid var(--secundary-color)
+    border-radius: 20px
+    background-color: var(--primary-color)
+    display: flex
+    flex-direction: column
+
+.position
+    margin: 0
+
+.player-card-box
+    transition: transform 1s
+    transform-style: preserve-3d
+    width: 180px
+    height: 60px
+    display: flex
+    align-items: center
+    margin: 10px 0
+
+.player-card
+    color: #fff
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+    position: absolute
+    border: 2px solid var(--secundary-color)
+    border-radius: 10px
+    color: var(--secundary-color)
+
+.card-front
+    height: 50%
+
+.card-back
+    height: 100%
+    background-color: var(--secundary-color)
+    color: #000
+    transform: rotateY(180deg)
+    display: flex
+    flex-direction: column
+    font-weight: bold
+
+.select-player-position
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 5px 0
+
+.select-player-position label
+  margin: 0 5px 0
+  color: white
+
+.flipme
+    transform: rotateY(180deg)
+
+.striker, .attacking-midfielders, .defensive-midfielders, .goalkeeper
+    display: flex
+    justify-content: center
+
+.wingers, .side-midfielders, .fullbacks
+    display: flex
+    justify-content: space-between
+    margin: 0 40px
+
+.strikers, .central-midfielders, .central-defenders
+    display: flex
+    justify-content: space-evenly
+
+/* || Player introduction */
+
+.introduce-player
+    color: white
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.team-text
+    color: white
+    font-weight: 500
+    font-size: 1.5em
+    margin-bottom: 10px
+    text-align: center
+
+.pick
+    display: flex
+    justify-content: center
+
+.pick input
+    border: 2px solid var(--secundary-color)
+    border-radius: 10px
+    background-color: var(--primary-color)
+    color: var(--secundary-color)
+    padding: 5px
+
+/* || Overlay CSS */
+
+.overlay
+    background: rgba(0, 0, 0, .5)
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 10
+    display: flex
+    justify-content: center
+    align-items: center
+
+.game-select
+    background: white
+    padding: 20px
+    border-radius: 15px
+    position: relative
+    z-index: 11
+    color: black
+    width: 40vw
+
+.overlay-container
+    display: flex
+    flex-direction: column
+    justify-content: center  
+    align-items: center      
+
+.game-select
+    text-align: center       
+
+.leagues
+    margin: 20px 0
+
+
+.team-error
+    display: flex
+    font-size: 1em
+
+
+
+
+
+
+@media screen and (min-width: 769px)
+    .formation
+        width: 700px
+        min-height: 70vh
+
+    .player-card-box
+        width: 150px
+
+@media screen and (max-height: 900px)
+    .formation
+        justify-content: space-evenly
+        width: 800px
+
+    .player-card-box
+        margin: 5px 0
+
+span
+  color: #FFF
+.player-image
+    width: 100px
+    height: 100px
+
+
+
+
+
+
+
+
+/* || Basic Button CSS */
+
+button
+  border: none
+  border-radius: 8px
+  color: #FFFFFF
+  cursor: pointer
+  display: inline-block
+  font: 500 14px/20px "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif
+  height: 40px
+  padding: 10px 16px
+  text-align: center
+  transition: background-color 100ms
+  user-select: none
+  touch-action: manipulation
+
+.player-button
+    background-color: #FFFFFF
+    color: #000
+
+    &:hover,
+    &:focus
+        background-color: #D3D3D3
+
+.overlay-button
+    background-color: var(--secundary-color)
+  
+    &:hover,
+    &:focus
+        background-color: var(--primary-color)
+
+/* || Home */
+
+.main-content
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+    flex-direction: row
+
+.gamemode
+    margin: 20px
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 200px
+    height: 75px
+    background-color: var(--primary-color)
+    border: 2px solid var(--secundary-color)
+    border-radius: 1em
+
+.gamemode:hover
+    border-color: #FFFF00
+
+.down-section
+    min-height: 125px

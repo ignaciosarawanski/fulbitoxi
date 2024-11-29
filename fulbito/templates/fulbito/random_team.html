@@ -1,0 +1,105 @@
+{% extends "fulbito/index.html" %}
+
+
+{% block content %}
+<div class="overlay overlay-container">
+    <div class="game-select overlay-container">
+        <p>Select Gamemode:</p>
+        <div class="leagues">
+            {% for league in league %}
+            <div class="league">
+                <input type="checkbox" class="league-checkbox" name="{{ league.league_name }}" id="{{ league.league_id }}" value="{{ league.league_id }}" checked>
+                <label for="{{ league.league_id }}">{{ league.league_name }} ({{ league.country }})</label>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="overlay-button" id="start-button">Start</button>
+        <div class="team-error"></div>
+    </div>
+</div>
+
+<div class="formation">
+    <div class="position">
+        <div class="striker">
+            <div class="player-card-box">
+                <div class="player-card card-front">ST</div>
+                <div class="player-card card-back"></div>
+            </div>
+        </div>
+        <div class="wingers">
+            <div class="player-card-box">
+                <div class="player-card card-front">LW</div>
+                <div class="player-card card-back"></div>
+            </div>
+            
+            <div class="player-card-box">
+                <div class="player-card card-front">RW</div>
+                <div class="player-card card-back"></div>
+            </div>
+        </div>
+    </div>
+    <div class="position">
+        <div class="central-midfielders">
+            <div class="player-card-box">
+                <div class="player-card card-front">CM</div>
+                <div class="player-card card-back"></div>
+            </div>
+            <div class="player-card-box">
+                <div class="player-card card-front">CM</div>
+                <div class="player-card card-back"></div>
+            </div>
+        </div>
+        <div class="defensive-midfielders">
+            <div class="player-card-box">
+                <div class="player-card card-front">CDM</div>
+                <div class="player-card card-back"></div>
+            </div>
+        </div>
+    </div>
+    <div class="position">
+        <div class="fullbacks">
+            <div class="player-card-box">
+                <div class="player-card card-front">LB</div>
+                <div class="player-card card-back"></div>
+            </div>
+            <div class="player-card-box">
+                <div class="player-card card-front">RB</div>
+                <div class="player-card card-back"></div>
+            </div>
+        </div>
+        <div class="central-defenders">
+            <div class="player-card-box">
+                <div class="player-card card-front">CB</div>
+                <div class="player-card card-back"></div>
+            </div>
+            <div class="player-card-box">
+                <div class="player-card card-front">CB</div>
+                <div class="player-card card-back"></div>
+            </div>
+        </div>    
+    </div>
+    <div class="position">
+        <div class="goalkeeper">
+            <div class="player-card-box">
+                <div class="player-card card-front">GK</div>
+                <div class="player-card card-back"> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="game-container">
+    <div class="up-section">Select the leagues and press "Start" to play!</div>
+    <div class="down-section" style="display: none">
+        <div class="team-text"></div>
+        <div class="pick">
+            <input id="player-input" type="text" placeholder="Introduce el jugador">
+            <button class="player-button" id="player-button">Insert</button>
+        </div>
+        <div class="select-player-position"></div>
+    </div>
+</div>
+
+
+{% endblock %}
